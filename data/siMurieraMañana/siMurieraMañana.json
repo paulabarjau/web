@@ -2,18 +2,23 @@
             "slug": "siMurieraMañana",
             "titulo": "SI MURIERA MAÑANA",
             "categoria": "videoclip",
-            "imatge_principal": "rigo_siMuriera_2.webp",
-            "galeria": [{
-                "tipo": "fotos",
-                "url": [
-                "rigo_siMuriera_1.webp",
-                "rigo_siMuriera_2.webp",
-                "rigo_siMuriera_3.webp",
-                "rigo_siMuriera_4.webp",
-                "rigo_siMuriera_5.webp",
-                "rigo_siMuriera_6.webp"
-                ]
-        }],
+            "imatge_principal": {
+                "tipo": "youtube",
+                "url": "https://www.youtube.com/watch?v=6k0b_MKujBw"
+            },
+            "galeria": [
+                {
+                    "tipo": "fotos",
+                    "url": [
+                        "rigo_siMuriera_1.webp",
+                        "rigo_siMuriera_2.webp",
+                        "rigo_siMuriera_3.webp",
+                        "rigo_siMuriera_4.webp",
+                        "rigo_siMuriera_5.webp",
+                        "rigo_siMuriera_6.webp"
+                    ]
+                }
+            ],
             "creditos": [
                 {
                     "titulo": {

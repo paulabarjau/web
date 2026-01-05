@@ -2,14 +2,11 @@
             "slug": "torito",
             "titulo": "TORITO! - Vernat.mp3",
             "categoria": "videoclip",
-            "imatge_principal": "TORITO_ANNAIZQUIERDO_1.webp",
+            "imatge_principal": {
+                "tipo": "youtube",
+                "url": "https://www.youtube.com/watch?v=6k0b_MKujBw"
+            },
             "galeria": [
-                {
-                    "tipo": "youtube",
-                    "url": [
-                        "https://www.youtube.com/watch?v=6k0b_MKujBw"
-                    ]
-                },
                 {
                     "tipo": "fotos",
                     "url": [
@@ -38,7 +35,7 @@
                         "cat": "Icon"
                     },
                     "nombre": "Mabel Olea",
-                    "link": null
+                    "link": "https://www.instagram.com/mabelolea_"
                 },
                 {
                     "titulo": {
@@ -47,7 +44,7 @@
                         "cat": "Director"
                     },
                     "nombre": "Isaac Fluxà",
-                    "link": null
+                    "link": "https://www.instagram.com/isaac.fluxa"
                 },
                 {
                     "titulo": {
@@ -56,7 +53,7 @@
                         "cat": "Direcció creativa i producció"
                     },
                     "nombre": "del_country_al_mambo, Paula Comellas",
-                    "link": null
+                    "link": "https://www.instagram.com/paulacomellas"
                 },
                 {
                     "titulo": {
@@ -65,7 +62,7 @@
                         "cat": "Direcció de moviment"
                     },
                     "nombre": "Mabel Olea",
-                    "link": null
+                    "link": "https://www.instagram.com/mabelolea"
                 },
                 {
                     "titulo": {
@@ -83,7 +80,7 @@
                         "cat": "Maquillatge i perruqueria"
                     },
                     "nombre": "Paula Barjau",
-                    "link": null
+                    "link": "https://www.instagram.com/paulabarjau"
                 },
                 {
                     "titulo": {
@@ -92,7 +89,7 @@
                         "cat": "Foto fixa"
                     },
                     "nombre": "Anna Izquierdo",
-                    "link": null
+                    "link": "https://www.instagram.com/annaizquierdo_"
                 },
                 {
                     "titulo": {
@@ -101,7 +98,7 @@
                         "cat": "Mix"
                     },
                     "nombre": "Arnau Figueres",
-                    "link": null
+                    "link": "https://www.instagram.com/arnaufigueres_"
                 },
                 {
                     "titulo": {
@@ -111,14 +108,6 @@
                     },
                     "nombre": "Dave Kutch",
                     "link": null
-                },
-                {
-                    "tipo": "extra",
-                    "texto": {
-                        "es": "Attega - Nimph - Anima'ns Grup - Napalm Rentals - 400 Studio",
-                        "en": "Attega - Nimph - Anima'ns Grup - Napalm Rentals - 400 Studio",
-                        "cat": "Attega - Nimph - Anima'ns Grup - Napalm Rentals - 400 Studio"
-                    }
                 }
             ]
         }
