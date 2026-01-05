@@ -1,0 +1,520 @@
+/* Fuente principal: Josefin Sans */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+/* Variables globales */
+:root {
+  --font-sans: "Josefin Sans", "Futura", system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-features: normal;
+  --font-tracking: -0.05em;
+  --max-width: 1200px;
+  --page-bg: #fff;
+  --menu-gap: 3dvh;
+}
+
+/* Reset y base */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-feature-settings: var(--font-features, normal);
+  font-variant-alternates: stylistic(1);
+  letter-spacing: var(--font-tracking);
+  background: var(--page-bg, #fff);
+  color: #000;
+  transition: background-color 0.45s ease;
+}
+
+/* Main container */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px;
+  padding-bottom: 40px;
+  background: var(--page-bg, #fff);
+  transition: background-color 0.45s ease;
+}
+
+/* Título principal */
+h1 {
+  font-weight: 600;
+  font-size: 2rem;
+  text-align: center;
+  margin: 20px 0 40px 0;
+  text-transform: lowercase;
+}
+
+#page-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Contenedor de proyectos */
+#projects-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Tarjeta de proyecto */
+.project-card {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Overlay del proyecto */
+.project-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  color: #fff;
+  pointer-events: none;
+}
+
+.project-card:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-sinopsis {
+  font-size: 1rem;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.project-see-more {
+  font-size: 0.9rem;
+  text-align: right;
+  text-transform: lowercase;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+/* Botón del menú (base común) */
+.menu-toggle {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 32px;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: var(--font-tracking);
+  cursor: pointer;
+  z-index: 100;
+  text-transform: lowercase;
+  transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 0;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* OPCION LENGUETA (actual) */
+/* .menu-toggle {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+} 
+  
+.menu-toggle.menu-open {
+  bottom: var(--menu-height, 200px);
+}*/
+
+/* OPCION BOTON (estilo sólido clásico) */
+.menu-toggle {
+  background: #000;
+  color: #fff;
+  bottom: var(--menu-gap, 20px);
+
+  box-shadow: none;
+}
+
+.menu-toggle.menu-open {
+  bottom: calc(var(--menu-height, 200px) + var(--menu-gap, 20px));
+}
+
+
+/* OPCION TEXTO SOLO (estilo minimal) */
+/* .menu-toggle {
+  background: transparent;
+  color: #000;
+  border: 2px solid transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+  
+.menu-toggle.menu-open {
+  bottom: var(--menu-height, 200px);
+}*/
+
+/* Panel del menú */
+.menu-panel {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  width: 100%;
+  max-width: var(--max-width);
+  background: var(--page-bg, #fff);
+  z-index: 99;
+  transition-property: transform, background-color;
+  transition-duration: 0.4s, 0.45s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1), ease;
+}
+
+.menu-panel.open {
+  transform: translateX(-50%) translateY(0);
+}
+
+.menu-content {
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5em;
+}
+
+/* Categorías */
+.categories-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.category-btn {
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: var(--font-tracking);
+  cursor: pointer;
+  text-transform: lowercase;
+  transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+  opacity: 0.8;
+}
+
+.category-btn.active {
+  /* El color se aplicará dinámicamente via JS */
+}
+
+.category-btn.inactive {
+  color: #000 !important;
+  opacity: 0.3;
+}
+
+/* Idiomas */
+.languages-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* Paginación */
+#load-more-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 40px; /* deja espacio para el botón fijo */
+}
+
+#load-more-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: var(--font-tracking);
+  cursor: pointer;
+  text-transform: lowercase;
+  padding: 8px 12px;
+  transition: opacity 0.2s ease;
+}
+
+#load-more-btn:hover {
+  opacity: 0.7;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: var(--font-tracking);
+  cursor: pointer;
+  color: inherit;
+  opacity: 0.3;
+  text-transform: lowercase;
+  transition: opacity 0.3s ease;
+}
+
+.lang-btn:hover {
+  opacity: 0.6;
+}
+
+.lang-btn.active {
+  opacity: 1;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card {
+    transition: none;
+  }
+}
+
+/* Responsive */
+@media (min-width: 600px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+}
+/* Estilos específicos para la página de proyecto */
+
+.project-page {
+  background: var(--page-bg, #fff);
+}
+
+.project-page .menu-panel {
+  background: inherit;
+}
+
+.project-page main {
+  padding-bottom: 100px;
+}
+
+.project-page .error-state-box {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+  width: 100%;
+}
+
+/* Título del proyecto */
+#project-title {
+  font-size: 1.8rem;
+  text-align: center;
+  margin: 20px 0 40px 0;
+  text-transform: none;
+  font-weight: 600;
+}
+
+/* Imagen principal */
+#main-image-container {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+#main-image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+#main-image-container iframe,
+#main-image-container video,
+.gallery-item iframe,
+.gallery-item video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: block;
+  border: 0;
+  background: #000;
+}
+
+#main-image-container video,
+.gallery-item video {
+  height: auto;
+}
+
+/* Créditos */
+#credits-container {
+  margin-bottom: 40px;
+}
+
+.credit-item {
+  line-height: 1.6;
+}
+
+.credit-title {
+  font-weight: 600;
+  display: inline;
+  margin-right: 8px;
+}
+
+.credit-name {
+  display: inline;
+}
+
+.credit-name a {
+  color: #000;
+  text-decoration: underline;
+}
+
+.credit-name a:hover {
+  opacity: 0.7;
+}
+
+.credit-extra {
+  margin-top: 20px;
+  font-style: italic;
+  color: #666;
+}
+
+/* Galería */
+#gallery-container {
+  width: 100%;
+}
+
+.gallery-item {
+  margin-bottom: 20px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gallery-item video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Página About */
+.about-page {
+  background: var(--page-bg, #fff);
+}
+
+.about-page main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 24px;
+  padding: 20px;
+  padding-bottom: 120px;
+}
+
+.about-page h1 {
+  margin: 20px 0 40px 0;
+  text-transform: lowercase;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: center;
+  max-width: 640px;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.about-text p {
+  margin: 0;
+}
+
+.about-web {
+  position: fixed;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  color: #000;
+  text-align: center;
+}
+
+.about-web a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+}
+
+.about-web a:hover {
+  opacity: 0.8;
+}
+
+/* YouTube embed */
+.gallery-item iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+}
+
+/* Botones del menú en la página de proyecto */
+.menu-action-btn {
+  display: block;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: var(--font-tracking);
+  cursor: pointer;
+  text-transform: lowercase;
+  text-align: center;
+  margin: 0;
+  transition: opacity 0.3s ease;
+}
+
+.menu-action-btn:hover {
+  opacity: 0.8;
+}
+
+/* Responsive */
+@media (min-width: 600px) {
+  #project-title {
+    font-size: 2.2rem;
+  }
+  
+  #credits-container {
+    padding: 0;
+  }
+}

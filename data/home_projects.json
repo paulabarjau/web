@@ -1,0 +1,39 @@
+{
+    "home_projects": {
+        "aitanaBonmati": {
+            "sinopsis": {
+                "es": "LA MAJA",
+                "en": "LA MAJA",
+                "cat": "LA MAJA"
+            },
+            "categoria": "commercial",
+            "date": "2025-01-25",
+            "relevance": 1,
+            "imatge_home": "fake_1.webp"
+        },
+        
+        "torito": {
+            "sinopsis": {
+                "es": "TORITO - Vernat.mp3",
+                "en": "TORITO - Vernat.mp3",
+                "cat": "TORITO - Vernat.mp3"
+            },
+            "categoria": "videoclip",
+            "date": "2024-10-24",
+            "relevance": 1,
+            "imatge_home": "TORITO_ANNAIZQUIERDO_1.webp"
+        },
+
+        "siMurieraMañana": {
+            "sinopsis": {
+                "es": "Si Muriera Mañana - Rigoberta Bandini",
+                "en": "Si Muriera Mañana - Rigoberta Bandini",
+                "cat": "Si Muriera Mañana - Rigoberta Bandini"
+            },
+            "categoria": "videoclip",
+            "date": "2024-09-27",
+            "relevance": 1,
+            "imatge_home": "rigo_siMuriera_2.webp"
+        }
+    }
+}
